@@ -11,12 +11,14 @@ class Clientes extends CI_Controller
         $this->load->model('Clientes_model');
     }
 
-    public function index(){
+    public function index()
+    {
         $data['query'] = $this->Clientes_model->getAllClientes();
         $this->load->view('clientes', $data);
     }
 
-    public function addCliente(){
+    public function addCliente()
+    {
         $cliente = array(
             'nome_cliente' => $this->input->post('nome_cliente'),
             'telemovel' => $this->input->post('telemovel'),
@@ -26,6 +28,15 @@ class Clientes extends CI_Controller
         $this->Clientes_model->addCliente($cliente);
         redirect(base_url('clientes'));
 
+    }
+
+    public function deleteCliente()
+    {
+        $cliente = $this->input->post('id_cliente');
+
+        $this->Clientes_model->removeCliente($cliente);
+
+        redirect(base_url('clientes'));
     }
 
 }
