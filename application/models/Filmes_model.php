@@ -11,7 +11,7 @@ class Filmes_model extends CI_Model
         $query = $this->db->get();
 
         if($query){
-            return $query->row_array;
+            return $query->row_array();
         } else {
             return false;
         }
