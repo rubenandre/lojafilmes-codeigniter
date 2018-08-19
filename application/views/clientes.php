@@ -169,7 +169,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit">Adicionar Clientes</button>
+                    <button class="btn btn-primary" type="submit">Adicionar Cliente</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

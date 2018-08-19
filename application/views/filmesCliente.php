@@ -82,7 +82,7 @@
         <section class="content">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Filmes</h3>
+                    <h3 class="box-title">Filmes alugados pelo cliente</h3>
                 </div>
                 <form method="post" action="<?php echo base_url('clientes'); ?>">
                     <div class="col-md-2" style="padding-bottom: 15px;">
