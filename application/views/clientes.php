@@ -110,7 +110,7 @@
                                     <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $row->id_cliente; ?>">
                                     <button data-toggle="modal" data-target="#filmesModal" class="btn btn-success" onclick="obterId(<?php echo $row->id_cliente; ?>)"><i class="fa fa-film"></i></button>
 
-                                    <form method="post" action="<?php echo base_url('#'); ?>" style="display: inline;">
+                                    <form method="post" action="<?php echo base_url('clientes/filmeByCliente'); ?>" style="display: inline;">
                                         <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $row->id_cliente; ?>">
                                         <button class="btn btn-primary"><i class="fa fa-eye"></i></button>
                                     </form>

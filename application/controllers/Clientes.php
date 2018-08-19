@@ -78,8 +78,21 @@ class Clientes extends CI_Controller
 
         $this->Data_aluguer->addAluguer($dados);
         redirect(base_url('clientes'));
+    }
 
+    public function filmeByCliente()
+    {
+        $this->load->model('Data_aluguer');
+        $this->load->model('Filmes_model');
+        $id_cliente = $this->input->post('id_cliente');
+        $dados['filmeCliente'] = $this->Data_aluguer->getFilmeByCliente($id_cliente);
+        $dados['obterNome'] = $this->Filmes_model;
+        $this->load->view('filmesCliente', $dados);
+    }
 
+    public function voltar()
+    {
+        redirect(base_url('clientes'));
     }
 
 }
