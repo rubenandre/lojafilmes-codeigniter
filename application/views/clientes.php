@@ -54,6 +54,11 @@
                         <i class="fa fa-users"></i> <span>Clientes</span>
                     </a>
                 </li>
+                <li class="treeview">
+                    <a href="<?php echo base_url('filmes'); ?>">
+                        <i class="fa fa-film"></i> <span>Filmes</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -69,7 +74,7 @@
                 &nbsp
             </h1>
             <ol class="breadcrumb">
-                <li><a href="<a href="<?php echo base_url('clientes'); ?>">Clientes</a></li>
+                <li><a href="<?php echo base_url('clientes'); ?>">Clientes</a></li>
             </ol>
         </section>
 
@@ -97,20 +102,24 @@
                         <?php foreach($query as $row): ?>
                             <tr>
                                 <th width="4%"><?php echo $row->id_cliente; ?></th>
-                                <td><?php echo $row->nome_cliente; ?></td>
-                                <td><?php echo $row->telemovel; ?></td>
+                                <td width="25%"><?php echo $row->nome_cliente; ?></td>
+                                <td width="15%"><?php echo $row->telemovel; ?></td>
                                 <td><?php echo $row->morada; ?></td>
-                                <td width="15%">
+                                <td width="18%">
                                     <form method="post" action="<?php echo base_url('#'); ?>" style="display: inline;">
-                                        <input type="hidden" name="id_contacto" id="id_contacto" value="<?php echo $row->id_cliente; ?>">
+                                        <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $row->id_cliente; ?>">
                                         <button class="btn btn-success"><i class="fa fa-film"></i></button>
                                     </form>
+                                    <form method="post" action="<?php echo base_url('#'); ?>" style="display: inline;">
+                                        <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $row->id_cliente; ?>">
+                                        <button class="btn btn-primary"><i class="fa fa-eye"></i></button>
+                                    </form>
                                     <form method="post" action="<?php echo base_url('clientes/editCliente'); ?>" style="display: inline;">
-                                        <input type="hidden" name="id_contacto" id="id_contacto" value="<?php echo $row->id_cliente; ?>">
+                                        <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $row->id_cliente; ?>">
                                         <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
                                     </form>
                                     <form method="post" action="<?php echo base_url('clientes/deleteCliente'); ?>" style="display: inline;">
-                                        <input type="hidden" name="id_contacto" id="id_contacto" value="<?php echo $row->id_cliente; ?>">
+                                        <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $row->id_cliente; ?>">
                                         <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                     </form>
                                 </td>
