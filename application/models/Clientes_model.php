@@ -44,7 +44,7 @@ class Clientes_model extends CI_Model
     {
         $this->db->where('id_cliente', $id);
         $this->db->update('clientes', $dados);
-}
+    }
 
     public function removeCliente($cliente){
         $this->db->where('id_cliente', $cliente);
