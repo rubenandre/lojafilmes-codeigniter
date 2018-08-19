@@ -40,6 +40,8 @@ class Filmes_model extends CI_Model
 
     public function deleteFilme($id)
     {
+        $this->db->where('filmes_id_filme', $id);
+        $this->db->delete('data_aluguer');
         $this->db->where('id_filme', $id);
         $this->db->delete('filmes');
     }

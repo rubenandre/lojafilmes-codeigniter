@@ -106,10 +106,10 @@
                                 <td width="15%"><?php echo $row->telemovel; ?></td>
                                 <td><?php echo $row->morada; ?></td>
                                 <td width="18%">
-                                    <form method="post" action="<?php echo base_url('#'); ?>" style="display: inline;">
-                                        <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $row->id_cliente; ?>">
-                                        <button class="btn btn-success"><i class="fa fa-film"></i></button>
-                                    </form>
+
+                                    <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $row->id_cliente; ?>">
+                                    <button data-toggle="modal" data-target="#filmesModal" class="btn btn-success" onclick="obterId(<?php echo $row->id_cliente; ?>)"><i class="fa fa-film"></i></button>
+
                                     <form method="post" action="<?php echo base_url('#'); ?>" style="display: inline;">
                                         <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $row->id_cliente; ?>">
                                         <button class="btn btn-primary"><i class="fa fa-eye"></i></button>
@@ -175,6 +175,44 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 </form>
+
+<form method="post" action="<?php echo base_url('clientes/addFilmeToCliente'); ?>">
+    <div class="modal fade" id="filmesModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Adicionar Filme a cliente</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-film" style="width: 15px;"></i></span>
+                        <input type="hidden" id="id_c" name="id_c" value="">
+                        <select name="filme" id="filme" class="form-control" required>
+                            <?php foreach ($filmes as $filme): ?>
+                                <option value="<?php echo $filme->id_filme ?>"><?php echo $filme->nome_filme; ?> (<?php echo $filme->ano_filme; ?>)</option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <br/>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar" style="width: 15px;"></i></span>
+                        <input type="date" id="data" name="data" class="form-control" placeholder="Data" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="submit">Adicionar Filme a cliente</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</form>
+
+<script type="text/javascript">
+    function obterId(id) {
+        document.getElementById("id_c").value = id;
+    }
+</script>
 
 
 </body>

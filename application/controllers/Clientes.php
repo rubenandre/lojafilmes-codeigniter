@@ -13,7 +13,9 @@ class Clientes extends CI_Controller
 
     public function index()
     {
+        $this->load->model('Filmes_model');
         $data['query'] = $this->Clientes_model->getAllClientes();
+        $data['filmes'] = $this->Filmes_model->getAllFilmes();
         $this->load->view('clientes', $data);
     }
 
@@ -60,6 +62,22 @@ class Clientes extends CI_Controller
 
         $this->Clientes_model->editarCliente($cliente['id_cliente'], $cliente);
         redirect('clientes');
+
+
+    }
+
+    public function addFilmeToCliente()
+    {
+        $this->load->model('Data_aluguer');
+
+        $dados = array(
+            'data' => $this->input->post('data'),
+            'filmes_id_filme' => $this->input->post('filme'),
+            'clientes_id_cliente' => $this->input->post('id_c'),
+        );
+
+        $this->Data_aluguer->addAluguer($dados);
+        redirect(base_url('clientes'));
 
 
     }
