@@ -21,4 +21,9 @@ class Data_aluguer extends CI_Model
         return $query->result();
     }
 
+    public function deleteFilmeCliente($id){
+        $this->db->where('iddata_aluguer', $id);
+        $this->db->delete('data_aluguer');
+    }
+
 }

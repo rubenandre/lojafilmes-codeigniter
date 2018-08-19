@@ -110,9 +110,10 @@
 
                                 <td width="15%"><?php echo $nome['filme'][0]->nome_filme; ?></td>
                                 <td width="15%"><?php echo $row->data; ?></td>
-                                <td width="4%">
-                                    <form method="post" action="<?php echo base_url('filmes/editFilme'); ?>" style="display: inline;">
-                                        <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                <td width="1%">
+                                    <form method="post" action="<?php echo base_url('clientes/deleteFilmeCliente'); ?>" style="display: inline;">
+                                        <input type="hidden" name="iddata_aluguer" id="iddata_aluguer" value="<?php echo $row->iddata_aluguer; ?>">
+                                        <button class="btn btn-success"><i class="fa fa-check"></i></button>
                                     </form>
                                 </td>
                             </tr>

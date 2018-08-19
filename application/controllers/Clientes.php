@@ -95,4 +95,15 @@ class Clientes extends CI_Controller
         redirect(base_url('clientes'));
     }
 
+    public function deleteFilmeCliente()
+    {
+        $this->load->model('Data_aluguer');
+        $id = $this->input->post('iddata_aluguer');
+
+        $this->Data_aluguer-> deleteFilmeCliente($id);
+
+        redirect(base_url('clientes'));
+
+    }
+
 }
