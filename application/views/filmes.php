@@ -89,7 +89,7 @@
                 </div>
                 <br><br>
                 <div class="box-body">
-                    <table id="exemplo" class="table table-bordered table-striped">
+                    <table id="filmes" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                             <th>#</th>
@@ -172,7 +172,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $('#exemplo').DataTable({
+        $('#filmes').DataTable({
             'paging'      : true,
             'lengthChange': true,
             'searching'   : true,
@@ -182,8 +182,5 @@
         })
     })
 </script>
-
-
-
 
 </body>
