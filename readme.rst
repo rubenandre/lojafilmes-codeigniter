@@ -8,14 +8,14 @@ Sistema criado com o framework php CodeIgniter usando o tema AdminLte.
 Informações de Lançamento
 *******************
 
-Versão 1.0 - Upload do projeto
+Versão 1.0
 
 **************************
 Funcionalidades
 **************************
 
-- Registro (em breve)
-- Login (em breve)
+- Registro
+- Login
 - Registro de clientes
 - Registro de filme
 - Aluguer de filmes a clientes
