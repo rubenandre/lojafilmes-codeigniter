@@ -10,6 +10,14 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+<?php
+$login = $this->session->userdata('login');
+if(!$login){
+
+    redirect('login');
+}
+?>
+
 <body class="hold-transition skin-red sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
@@ -23,7 +31,15 @@
             <span class="logo-lg"><b>Movie </b>Rentals</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top"></nav>
+        <nav class="navbar navbar-static-top">
+            <form action="<?php echo base_url('dashboard/logout'); ?>" method="post">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a><button type="submit" style="background: transparent; border: none;"><i class="fa fa-power-off"></i></button></a>
+                    </li>
+                </ul>
+            </form>
+        </nav>
     </header>
 
     <!-- =============================================== -->
@@ -37,7 +53,7 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Menus</li>
                 <li class="treeview">
-                    <a href="<?php echo base_url('#'); ?>">
+                    <a href="<?php echo base_url('dashboard'); ?>">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                 </li>

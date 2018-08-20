@@ -1,6 +1,6 @@
 <?php
 
-class Login extends CI_Controller
+class Register extends CI_Controller
 {
 
     public function __construct()
@@ -8,29 +8,30 @@ class Login extends CI_Controller
         // Load's necessários
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('Login_model');
+        $this->load->model('Register_model');
         $this->load->library('session');
     }
 
     public function index()
     {
-        $this->load->view('login');
+        $this->load->view('register');
     }
 
-    public function login(){
+    public function registrar()
+    {
         $vendedor = array(
             'nome_vendedor' => $this->input->post('vendedor'),
             'pass_vendedor' => hash('sha512', $this->input->post('password'))
         );
 
-        $data = $this->Login_model->user_login($vendedor['nome_vendedor'], $vendedor['pass_vendedor']);
+        $data = $this->Register_model->check_vendedor($vendedor['nome_vendedor']);
 
         if($data) {
-            $this->session->set_userdata('login', 'true');
-            redirect('dashboard');
+            $this->Register_model->register_vendedor($vendedor);
+            redirect(base_url('login'));
         } else {
-            $this->session->set_flashdata('erro', 'Utilizador ou senha errados');
-            redirect('login');
+            $this->session->set_flashdata('erro', 'Vendedor já existe');
+            redirect(base_url('register'));
         }
 
     }

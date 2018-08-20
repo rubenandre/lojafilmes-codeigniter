@@ -9,15 +9,17 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <?php
-$login = $this->session->userdata('login');
+$login = $this->session->userdata('login_id');
 if($login){
 
     redirect('dashboard');
 }
- ?>
+
+?>
 
 <?php
 $erro = $this->session->flashdata('erro');
+
 if($erro){
 ?>
 <script type="text/javascript">
@@ -26,6 +28,7 @@ if($erro){
 <?php
 }
 ?>
+
 
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -36,7 +39,7 @@ if($erro){
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-        <form action="<?php echo base_url('login/login'); ?>" method="post">
+        <form action="<?php echo base_url('register/registrar'); ?>" method="post">
             <div class="form-group has-feedback">
                 <input type="text" id="vendedor" name="vendedor" class="form-control" placeholder="Vendedor">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -47,13 +50,13 @@ if($erro){
             </div>
             <div class="row">
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                    <button type="submit" class="btn btn-primary btn-flat">Registrar Vendedor</button>
                 </div>
                 <!-- /.col -->
             </div>
         </form>
 
-        <a href="<?php echo base_url('register'); ?>" class="text-center">Registrar novo vendedor</a>
+        <a href="<?php echo base_url('login'); ?>" class="text-center">Entrar na conta</a>
 
     </div>
     <!-- /.login-box-body -->

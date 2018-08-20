@@ -9,6 +9,7 @@ class Dashboard extends CI_Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('Dashboard_model');
+        $this->load->library('session');
     }
 
     public function index()
@@ -17,6 +18,12 @@ class Dashboard extends CI_Controller
         $dados['numClientes'] = $this->Dashboard_model->getNumberClientes();
         $dados['numAlugados'] = $this->Dashboard_model->getNumberAlugados();
         $this->load->view('dashboard', $dados);
+    }
+
+    public function logout()
+    {
+        $this->session->set_userdata('login', null);
+        redirect(base_url('login'));
     }
 
 }
