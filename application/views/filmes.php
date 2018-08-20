@@ -16,7 +16,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo base_url('sistema'); ?>" class="logo">
+        <a href="<?php echo base_url('dashboard'); ?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>M</b>RT</span>
             <!-- logo for regular state and mobile devices -->
@@ -145,12 +145,12 @@
                 </div>
                 <div class="modal-body">
                     <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-film" style="width: 10px;"></i></span>
+                        <span class="input-group-addon"><i class="fa fa-film" style="width: 15px;"></i></span>
                         <input type="text" id="nome_filme" name="nome_filme" class="form-control" placeholder="Nome do Filme">
                     </div>
                     <br/>
                     <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-calendar" style="width: 10px;"></i></span>
+                        <span class="input-group-addon"><i class="fa fa-calendar" style="width: 15px;"></i></span>
                         <input type="number" min="0" id="ano_filme" name="ano_filme" class="form-control" placeholder="Ano do filme">
                     </div>
                     <br/>
