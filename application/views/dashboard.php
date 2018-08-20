@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-<body class="hold-transition skin-red sidebar-mini">
+<body class="hold-transition skin-red">
 <!-- Site wrapper -->
 <div class="wrapper">
 
@@ -25,15 +25,7 @@
             <span class="logo-lg"><b>Movie </b>Rentals</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-        </nav>
+        <nav class="navbar navbar-static-top"></nav>
     </header>
 
     <!-- =============================================== -->
@@ -41,7 +33,7 @@
     <!-- Left side column. contains the sidebar -->
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
-        <section id="push-menu" class="sidebar">
+        <section class="sidebar">
             <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
